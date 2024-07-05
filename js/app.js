@@ -56,21 +56,49 @@ function partnerSendMessage() {
     content.appendChild(div);
   }, 1000);
 }
-setInterval(setAsosiy, 1000);
-const milSoat = document.querySelector("[bu-soat-mili]");
-const milMinut = document.querySelector("[bu-minut-mili]");
-const milSekund = document.querySelector("[bu-sekund-mili]");
 
-function setAsosiy() {
-  const currentDate = new Date();
-  const secondsRatio = currentDate.getSeconds() / 60;
-  const minutesRatio = (secondsRatio + currentDate.getMinutes()) / 60;
-  const hoursRatio = (minutesRatio + currentDate.getHours()) / 12;
-  setRotation(milSekund, secondsRatio);
-  setRotation(milMinut, minutesRatio);
-  setRotation(milSoat, hoursRatio);
+// setInterval(setAsosiy, 1000);
+// const milSoat = document.querySelector(".hourss");
+// const milMinut = document.querySelector(".munut");
+// const milSekund = document.querySelector(".seekund");
+
+// function setAsosiy() {
+//   const currentDate = new Date();
+//   const secondsRatio = currentDate.getSeconds() / 60;
+//   const minutesRatio = (secondsRatio + currentDate.getMinutes()) / 60;
+//   const hoursRatio = (minutesRatio + currentDate.getHours()) / 12;
+//   setRotation(seekund, secondsRatio);
+//   setRotation(munut, minutesRatio);
+//   setRotation(hourss, hoursRatio);
+// }
+// function setRotation(element, rotationRatio) {
+//   element.style.setProperty("transform", rotate (`${rotationRatio * 360}deg`));
+// }
+// setAsosiy()
+const item =document.querySelector(".item")
+function updateClock() {
+  let now = new Date();
+  let hours = now.getHours().toString().padStart(2, "0");
+  let minutes = now.getMinutes().toString().padStart(2,"0");
+  let seconds = now.getSeconds().toString().padStart(2, "0");
+ 
+ console.log(item.textContent = `${hours}:${minutes}:${seconds}`);
 }
-function setRotation(element, rotationRatio) {
-  element.style.setProperty("transform", `rotate (${rotationRatio * 360}deg)`);
+
+console.log(updateClock()); 
+setInterval(()=>{
+  updateClock()
+},1000)
+
+{
+const item2 = document.querySelector(".item2");
+function day() {
+  let now = new Date();
+  let hours = now.getDay();
+  let minutes = now.getMonth();
+  let seconds = now.getFullYear();
+
+  console.log((item2.textContent = `${hours}.${minutes}.${seconds}`));
 }
-setAsosiy();
+console.log(day());
+}

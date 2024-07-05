@@ -94,3 +94,20 @@
     background: darkblue;
     border: 2px solid rgb(44, 6, 6);
 }
+.body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.clock {
+    text-align: center;
+}
+
+#clockDisplay {
+    font-size: 3em;
+}
